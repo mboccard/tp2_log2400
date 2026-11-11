@@ -11,18 +11,12 @@ class StrategieInfusion;
 class The {
 public:
     virtual ~The();
-
     const std::string& getNom() const;
-    double getQuantiteFeuilles() const;   // en g
-    double getVolumeServi() const;        // en mL
-    double getTemperatureCible() const;   // en °C
-    int getDureeInfusion() const;         // en secondes
-
-    // Ressources totales requises pour préparer ce thé (pertes incluses).
-    // Aucune consommation n'est effectuée.
+    double getQuantiteFeuilles() const;
+    double getVolumeServi() const;
+    double getTemperatureCible() const;
+    int getDureeInfusion() const;
     Besoins calculerBesoins(ContexteInfusion& contexte) const;
-
-    // Prépare le thé en déléguant à la stratégie d'infusion.
     void preparer(ContexteInfusion& contexte) const;
 
 protected:

@@ -4,7 +4,7 @@
 
 void Chauffage::chauffer(double temperatureCible, const std::string& description) const
 {
-    const double duree = (temperatureCible - TEMPERATURE_INITIALE) / vitesse();
+    const double duree = (temperatureCible - constantes::TEMPERATURE_INITIALE_CHAUFFAGE) / vitesse();
 
     std::cout << "Chauffage ";
     if (!description.empty()) {

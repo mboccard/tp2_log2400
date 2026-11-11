@@ -1,0 +1,104 @@
+[
+{
+  "directory": "C:/Users/mbocc/Documents/Université/Semestre3_A2026/LOG2400/TP2/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe -IC:/Users/mbocc/Documents/Université/Semestre3_A2026/LOG2400/TP2/PolyInfusion/include -g -Wall -Wextra -Wpedantic -o CMakeFiles\\PolyInfusion.dir\\src\\main.cpp.obj -c C:\\Users\\mbocc\\Documents\\Université\\Semestre3_A2026\\LOG2400\\TP2\\PolyInfusion\\src\\main.cpp",
+  "file": "C:/Users/mbocc/Documents/Université/Semestre3_A2026/LOG2400/TP2/PolyInfusion/src/main.cpp",
+  "output": "C:/Users/mbocc/Documents/Université/Semestre3_A2026/LOG2400/TP2/build/CMakeFiles/PolyInfusion.dir/src/main.cpp.obj"
+},
+{
+  "directory": "C:/Users/mbocc/Documents/Université/Semestre3_A2026/LOG2400/TP2/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe -IC:/Users/mbocc/Documents/Université/Semestre3_A2026/LOG2400/TP2/PolyInfusion/include -g -Wall -Wextra -Wpedantic -o CMakeFiles\\PolyInfusion.dir\\src\\console\\Console.cpp.obj -c C:\\Users\\mbocc\\Documents\\Université\\Semestre3_A2026\\LOG2400\\TP2\\PolyInfusion\\src\\console\\Console.cpp",
+  "file": "C:/Users/mbocc/Documents/Université/Semestre3_A2026/LOG2400/TP2/PolyInfusion/src/console/Console.cpp",
+  "output": "C:/Users/mbocc/Documents/Université/Semestre3_A2026/LOG2400/TP2/build/CMakeFiles/PolyInfusion.dir/src/console/Console.cpp.obj"
+},
+{
+  "directory": "C:/Users/mbocc/Documents/Université/Semestre3_A2026/LOG2400/TP2/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe -IC:/Users/mbocc/Documents/Université/Semestre3_A2026/LOG2400/TP2/PolyInfusion/include -g -Wall -Wextra -Wpedantic -o CMakeFiles\\PolyInfusion.dir\\src\\Sujet.cpp.obj -c C:\\Users\\mbocc\\Documents\\Université\\Semestre3_A2026\\LOG2400\\TP2\\PolyInfusion\\src\\Sujet.cpp",
+  "file": "C:/Users/mbocc/Documents/Université/Semestre3_A2026/LOG2400/TP2/PolyInfusion/src/Sujet.cpp",
+  "output": "C:/Users/mbocc/Documents/Université/Semestre3_A2026/LOG2400/TP2/build/CMakeFiles/PolyInfusion.dir/src/Sujet.cpp.obj"
+},
+{
+  "directory": "C:/Users/mbocc/Documents/Université/Semestre3_A2026/LOG2400/TP2/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe -IC:/Users/mbocc/Documents/Université/Semestre3_A2026/LOG2400/TP2/PolyInfusion/include -g -Wall -Wextra -Wpedantic -o CMakeFiles\\PolyInfusion.dir\\src\\Reserve.cpp.obj -c C:\\Users\\mbocc\\Documents\\Université\\Semestre3_A2026\\LOG2400\\TP2\\PolyInfusion\\src\\Reserve.cpp",
+  "file": "C:/Users/mbocc/Documents/Université/Semestre3_A2026/LOG2400/TP2/PolyInfusion/src/Reserve.cpp",
+  "output": "C:/Users/mbocc/Documents/Université/Semestre3_A2026/LOG2400/TP2/build/CMakeFiles/PolyInfusion.dir/src/Reserve.cpp.obj"
+},
+{
+  "directory": "C:/Users/mbocc/Documents/Université/Semestre3_A2026/LOG2400/TP2/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe -IC:/Users/mbocc/Documents/Université/Semestre3_A2026/LOG2400/TP2/PolyInfusion/include -g -Wall -Wextra -Wpedantic -o CMakeFiles\\PolyInfusion.dir\\src\\AlerteEcran.cpp.obj -c C:\\Users\\mbocc\\Documents\\Université\\Semestre3_A2026\\LOG2400\\TP2\\PolyInfusion\\src\\AlerteEcran.cpp",
+  "file": "C:/Users/mbocc/Documents/Université/Semestre3_A2026/LOG2400/TP2/PolyInfusion/src/AlerteEcran.cpp",
+  "output": "C:/Users/mbocc/Documents/Université/Semestre3_A2026/LOG2400/TP2/build/CMakeFiles/PolyInfusion.dir/src/AlerteEcran.cpp.obj"
+},
+{
+  "directory": "C:/Users/mbocc/Documents/Université/Semestre3_A2026/LOG2400/TP2/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe -IC:/Users/mbocc/Documents/Université/Semestre3_A2026/LOG2400/TP2/PolyInfusion/include -g -Wall -Wextra -Wpedantic -o CMakeFiles\\PolyInfusion.dir\\src\\AlerteTexte.cpp.obj -c C:\\Users\\mbocc\\Documents\\Université\\Semestre3_A2026\\LOG2400\\TP2\\PolyInfusion\\src\\AlerteTexte.cpp",
+  "file": "C:/Users/mbocc/Documents/Université/Semestre3_A2026/LOG2400/TP2/PolyInfusion/src/AlerteTexte.cpp",
+  "output": "C:/Users/mbocc/Documents/Université/Semestre3_A2026/LOG2400/TP2/build/CMakeFiles/PolyInfusion.dir/src/AlerteTexte.cpp.obj"
+},
+{
+  "directory": "C:/Users/mbocc/Documents/Université/Semestre3_A2026/LOG2400/TP2/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe -IC:/Users/mbocc/Documents/Université/Semestre3_A2026/LOG2400/TP2/PolyInfusion/include -g -Wall -Wextra -Wpedantic -o CMakeFiles\\PolyInfusion.dir\\src\\NotificationDistante.cpp.obj -c C:\\Users\\mbocc\\Documents\\Université\\Semestre3_A2026\\LOG2400\\TP2\\PolyInfusion\\src\\NotificationDistante.cpp",
+  "file": "C:/Users/mbocc/Documents/Université/Semestre3_A2026/LOG2400/TP2/PolyInfusion/src/NotificationDistante.cpp",
+  "output": "C:/Users/mbocc/Documents/Université/Semestre3_A2026/LOG2400/TP2/build/CMakeFiles/PolyInfusion.dir/src/NotificationDistante.cpp.obj"
+},
+{
+  "directory": "C:/Users/mbocc/Documents/Université/Semestre3_A2026/LOG2400/TP2/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe -IC:/Users/mbocc/Documents/Université/Semestre3_A2026/LOG2400/TP2/PolyInfusion/include -g -Wall -Wextra -Wpedantic -o CMakeFiles\\PolyInfusion.dir\\src\\Chauffage.cpp.obj -c C:\\Users\\mbocc\\Documents\\Université\\Semestre3_A2026\\LOG2400\\TP2\\PolyInfusion\\src\\Chauffage.cpp",
+  "file": "C:/Users/mbocc/Documents/Université/Semestre3_A2026/LOG2400/TP2/PolyInfusion/src/Chauffage.cpp",
+  "output": "C:/Users/mbocc/Documents/Université/Semestre3_A2026/LOG2400/TP2/build/CMakeFiles/PolyInfusion.dir/src/Chauffage.cpp.obj"
+},
+{
+  "directory": "C:/Users/mbocc/Documents/Université/Semestre3_A2026/LOG2400/TP2/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe -IC:/Users/mbocc/Documents/Université/Semestre3_A2026/LOG2400/TP2/PolyInfusion/include -g -Wall -Wextra -Wpedantic -o CMakeFiles\\PolyInfusion.dir\\src\\Distributeur.cpp.obj -c C:\\Users\\mbocc\\Documents\\Université\\Semestre3_A2026\\LOG2400\\TP2\\PolyInfusion\\src\\Distributeur.cpp",
+  "file": "C:/Users/mbocc/Documents/Université/Semestre3_A2026/LOG2400/TP2/PolyInfusion/src/Distributeur.cpp",
+  "output": "C:/Users/mbocc/Documents/Université/Semestre3_A2026/LOG2400/TP2/build/CMakeFiles/PolyInfusion.dir/src/Distributeur.cpp.obj"
+},
+{
+  "directory": "C:/Users/mbocc/Documents/Université/Semestre3_A2026/LOG2400/TP2/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe -IC:/Users/mbocc/Documents/Université/Semestre3_A2026/LOG2400/TP2/PolyInfusion/include -g -Wall -Wextra -Wpedantic -o CMakeFiles\\PolyInfusion.dir\\src\\Infuseur.cpp.obj -c C:\\Users\\mbocc\\Documents\\Université\\Semestre3_A2026\\LOG2400\\TP2\\PolyInfusion\\src\\Infuseur.cpp",
+  "file": "C:/Users/mbocc/Documents/Université/Semestre3_A2026/LOG2400/TP2/PolyInfusion/src/Infuseur.cpp",
+  "output": "C:/Users/mbocc/Documents/Université/Semestre3_A2026/LOG2400/TP2/build/CMakeFiles/PolyInfusion.dir/src/Infuseur.cpp.obj"
+},
+{
+  "directory": "C:/Users/mbocc/Documents/Université/Semestre3_A2026/LOG2400/TP2/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe -IC:/Users/mbocc/Documents/Université/Semestre3_A2026/LOG2400/TP2/PolyInfusion/include -g -Wall -Wextra -Wpedantic -o CMakeFiles\\PolyInfusion.dir\\src\\FabriqueCompact.cpp.obj -c C:\\Users\\mbocc\\Documents\\Université\\Semestre3_A2026\\LOG2400\\TP2\\PolyInfusion\\src\\FabriqueCompact.cpp",
+  "file": "C:/Users/mbocc/Documents/Université/Semestre3_A2026/LOG2400/TP2/PolyInfusion/src/FabriqueCompact.cpp",
+  "output": "C:/Users/mbocc/Documents/Université/Semestre3_A2026/LOG2400/TP2/build/CMakeFiles/PolyInfusion.dir/src/FabriqueCompact.cpp.obj"
+},
+{
+  "directory": "C:/Users/mbocc/Documents/Université/Semestre3_A2026/LOG2400/TP2/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe -IC:/Users/mbocc/Documents/Université/Semestre3_A2026/LOG2400/TP2/PolyInfusion/include -g -Wall -Wextra -Wpedantic -o CMakeFiles\\PolyInfusion.dir\\src\\FabriquePro.cpp.obj -c C:\\Users\\mbocc\\Documents\\Université\\Semestre3_A2026\\LOG2400\\TP2\\PolyInfusion\\src\\FabriquePro.cpp",
+  "file": "C:/Users/mbocc/Documents/Université/Semestre3_A2026/LOG2400/TP2/PolyInfusion/src/FabriquePro.cpp",
+  "output": "C:/Users/mbocc/Documents/Université/Semestre3_A2026/LOG2400/TP2/build/CMakeFiles/PolyInfusion.dir/src/FabriquePro.cpp.obj"
+},
+{
+  "directory": "C:/Users/mbocc/Documents/Université/Semestre3_A2026/LOG2400/TP2/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe -IC:/Users/mbocc/Documents/Université/Semestre3_A2026/LOG2400/TP2/PolyInfusion/include -g -Wall -Wextra -Wpedantic -o CMakeFiles\\PolyInfusion.dir\\src\\Besoins.cpp.obj -c C:\\Users\\mbocc\\Documents\\Université\\Semestre3_A2026\\LOG2400\\TP2\\PolyInfusion\\src\\Besoins.cpp",
+  "file": "C:/Users/mbocc/Documents/Université/Semestre3_A2026/LOG2400/TP2/PolyInfusion/src/Besoins.cpp",
+  "output": "C:/Users/mbocc/Documents/Université/Semestre3_A2026/LOG2400/TP2/build/CMakeFiles/PolyInfusion.dir/src/Besoins.cpp.obj"
+},
+{
+  "directory": "C:/Users/mbocc/Documents/Université/Semestre3_A2026/LOG2400/TP2/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe -IC:/Users/mbocc/Documents/Université/Semestre3_A2026/LOG2400/TP2/PolyInfusion/include -g -Wall -Wextra -Wpedantic -o CMakeFiles\\PolyInfusion.dir\\src\\The.cpp.obj -c C:\\Users\\mbocc\\Documents\\Université\\Semestre3_A2026\\LOG2400\\TP2\\PolyInfusion\\src\\The.cpp",
+  "file": "C:/Users/mbocc/Documents/Université/Semestre3_A2026/LOG2400/TP2/PolyInfusion/src/The.cpp",
+  "output": "C:/Users/mbocc/Documents/Université/Semestre3_A2026/LOG2400/TP2/build/CMakeFiles/PolyInfusion.dir/src/The.cpp.obj"
+},
+{
+  "directory": "C:/Users/mbocc/Documents/Université/Semestre3_A2026/LOG2400/TP2/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe -IC:/Users/mbocc/Documents/Université/Semestre3_A2026/LOG2400/TP2/PolyInfusion/include -g -Wall -Wextra -Wpedantic -o CMakeFiles\\PolyInfusion.dir\\src\\StrategieInfusion.cpp.obj -c C:\\Users\\mbocc\\Documents\\Université\\Semestre3_A2026\\LOG2400\\TP2\\PolyInfusion\\src\\StrategieInfusion.cpp",
+  "file": "C:/Users/mbocc/Documents/Université/Semestre3_A2026/LOG2400/TP2/PolyInfusion/src/StrategieInfusion.cpp",
+  "output": "C:/Users/mbocc/Documents/Université/Semestre3_A2026/LOG2400/TP2/build/CMakeFiles/PolyInfusion.dir/src/StrategieInfusion.cpp.obj"
+},
+{
+  "directory": "C:/Users/mbocc/Documents/Université/Semestre3_A2026/LOG2400/TP2/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe -IC:/Users/mbocc/Documents/Université/Semestre3_A2026/LOG2400/TP2/PolyInfusion/include -g -Wall -Wextra -Wpedantic -o CMakeFiles\\PolyInfusion.dir\\src\\InfusionAvecRincage.cpp.obj -c C:\\Users\\mbocc\\Documents\\Université\\Semestre3_A2026\\LOG2400\\TP2\\PolyInfusion\\src\\InfusionAvecRincage.cpp",
+  "file": "C:/Users/mbocc/Documents/Université/Semestre3_A2026/LOG2400/TP2/PolyInfusion/src/InfusionAvecRincage.cpp",
+  "output": "C:/Users/mbocc/Documents/Université/Semestre3_A2026/LOG2400/TP2/build/CMakeFiles/PolyInfusion.dir/src/InfusionAvecRincage.cpp.obj"
+},
+{
+  "directory": "C:/Users/mbocc/Documents/Université/Semestre3_A2026/LOG2400/TP2/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe -IC:/Users/mbocc/Documents/Université/Semestre3_A2026/LOG2400/TP2/PolyInfusion/include -g -Wall -Wextra -Wpedantic -o CMakeFiles\\PolyInfusion.dir\\src\\Machine.cpp.obj -c C:\\Users\\mbocc\\Documents\\Université\\Semestre3_A2026\\LOG2400\\TP2\\PolyInfusion\\src\\Machine.cpp",
+  "file": "C:/Users/mbocc/Documents/Université/Semestre3_A2026/LOG2400/TP2/PolyInfusion/src/Machine.cpp",
+  "output": "C:/Users/mbocc/Documents/Université/Semestre3_A2026/LOG2400/TP2/build/CMakeFiles/PolyInfusion.dir/src/Machine.cpp.obj"
+}
+]

@@ -2,6 +2,10 @@
 
 #include <iostream>
 #include <string>
+#include <memory>
+#include "FabriqueCompact.h"
+#include "FabriquePro.h"
+#include "Machine.h"
 
 #ifdef _WIN32
 #ifndef NOMINMAX
@@ -26,8 +30,11 @@ int main(int argc, char* argv[])
 
     // TODO : créer et initialiser les objets de votre conception pour le modèle choisi.
     // Ce gabarit ne fournit aucune logique métier ni implémentation de patron.
-    std::cout << "Machine PolyInfusion démarrée : modèle "
-              << (modele == "compact" ? "Compact" : "Pro") << ".\n";
+    const std::unique_ptr<FabriqueComposants> fabrique = (modele == "compact") ? std::unique_ptr<FabriqueComposants>(std::make_unique<FabriqueCompact>()) : std::unique_ptr<FabriqueComposants>(std::make_unique<FabriquePro>());
+    Machine machine(*fabrique);
+
+    std::cout << "Machine PolyInfusion démarrée : modèle " << (modele == "compact" ? "Compact" : "Pro") << ".\n";
+    std::cout << std::endl;
 
     for (std::string ligne; std::cout << "> " << std::flush, std::getline(std::cin, ligne);) {
         const auto instruction = console::analyser(ligne);
@@ -45,29 +52,30 @@ int main(int argc, char* argv[])
             break;
         case console::TypeInstruction::Selection:
             // TODO : déléguer la sélection à votre application (instruction.the).
-            std::cout << "À implémenter : sélection du thé.\n";
+            machine.selectionner(instruction.the);
             break;
         case console::TypeInstruction::Infuser:
             // TODO : déléguer la préparation d’une portion à votre application.
-            std::cout << "À implémenter : préparation du thé.\n";
+            machine.infuser();
             break;
         case console::TypeInstruction::Reserves:
             // TODO : déléguer l’affichage des réserves à votre application.
-            std::cout << "À implémenter : affichage des réserves.\n";
+            machine.afficherReserves();
             break;
         case console::TypeInstruction::RemplirEau:
             // TODO : déléguer le remplissage (instruction.quantite, en mL).
-            std::cout << "À implémenter : remplissage d’eau.\n";
+            machine.remplirEau(instruction.quantite);
             break;
         case console::TypeInstruction::RemplirThe:
             // TODO : déléguer le remplissage (instruction.the, instruction.quantite en g).
-            std::cout << "À implémenter : remplissage de thé.\n";
+            machine.remplirThe(instruction.the, instruction.quantite);
             break;
         case console::TypeInstruction::Notifications:
             // TODO : déléguer l’abonnement ou le désabonnement (instruction.notificationsActives).
-            std::cout << "À implémenter : gestion des notifications à distance.\n";
+            machine.activerNotificationsDistantes(instruction.notificationsActives);
             break;
         }
+        std::cout << std::endl;
     }
     std::cout << "\nArrêt de PolyInfusion.\n";
     return 0;
