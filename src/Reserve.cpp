@@ -6,14 +6,7 @@
 
 #include "Constantes.h"
 
-Reserve::Reserve(std::string nom, std::string unite, double quantiteInitiale, double seuil)
-    : nom_(std::move(nom)),
-      unite_(std::move(unite)),
-      quantite_(quantiteInitiale),
-      seuil_(seuil),
-      sousSeuil_(quantiteInitiale < seuil - constantes::EPSILON)
-{
-}
+Reserve::Reserve(std::string nom, std::string unite, double quantiteInitiale, double seuil) : nom_(std::move(nom)), unite_(std::move(unite)), quantite_(quantiteInitiale), seuil_(seuil), sousSeuil_(quantiteInitiale < seuil - constantes::EPSILON) {}
 
 const std::string& Reserve::getNom() const { return nom_; }
 const std::string& Reserve::getUnite() const { return unite_; }

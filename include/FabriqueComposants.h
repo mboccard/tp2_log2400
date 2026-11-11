@@ -6,8 +6,6 @@
 #include "DistributeurEau.h"
 #include "DistributeurThe.h"
 
-// Fabrique abstraite : crée l'ensemble cohérent de composants d'un modèle.
-// Ajouter un modèle = ajouter une fabrique concrète et ses composants.
 class FabriqueComposants {
 public:
     virtual ~FabriqueComposants() = default;
