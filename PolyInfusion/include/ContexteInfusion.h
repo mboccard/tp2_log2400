@@ -1,10 +1,10 @@
 #pragma once
  
-#include "Chauffage.h";
-#include "DistributeurEau.h";
-#include "DistributeurThe.h";
-#include "Infuseur.h";
-#include "Reserve.h";
+#include "Chauffage.h"
+#include "DistributeurEau.h"
+#include "DistributeurThe.h"
+#include "Infuseur.h"
+#include "Reserve.h"
 
 class ContexteInfusion {
 public:

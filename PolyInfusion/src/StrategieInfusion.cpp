@@ -21,12 +21,12 @@ void StrategieInfusion::executer(const The& the, ContexteInfusion& contexte) con
     std::cout << "Votre thé est prêt.\n";
 }
 
-bool StrategieInfusion::phasePreliminaire(const The& the, ContexteInfusion& contexte) const
+bool StrategieInfusion::phasePreliminaire(const The&, ContexteInfusion&) const
 {
     return false;
 }
 
-Besoins StrategieInfusion::obtenirBesoinsPreliminaires(const The& the, ContexteInfusion& contexte) const
+Besoins StrategieInfusion::obtenirBesoinsPreliminaires(const The&, ContexteInfusion&) const
 {
     return Besoins(0.0, 0.0);
 }

@@ -17,7 +17,6 @@ Machine::Machine(const FabriqueComposants& modele) : chauffage_(modele.creerChau
     thes_.push_back(std::make_unique<TheNoir>());
     thes_.push_back(std::make_unique<TheOolong>());
  
-    // Chaque thé a sa propre réserve, abonnée aux alertes.
     for (const auto& the : thes_) {
         const std::string nom = the->getNom();
         reservesThe_.emplace(nom, Reserve(constantes::PREFIXE_NOM_RESERVE_THE + nom, constantes::UNITE_THE, constantes::THE_INITIAL_G, constantes::SEUIL_THE_G));
