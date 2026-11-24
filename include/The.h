@@ -2,7 +2,6 @@
 
 #include <memory>
 #include <string>
-
 #include "Besoins.h"
 
 class ContexteInfusion;

@@ -1,13 +1,11 @@
 #pragma once
 
 #include <string>
-
 #include "Sujet.h"
 
 class Reserve : public Sujet {
 public:
     Reserve(std::string nom, std::string unite, double quantiteInitiale, double seuil);
-
     const std::string& getNom() const;
     const std::string& getUnite() const;
     double getQuantite() const;

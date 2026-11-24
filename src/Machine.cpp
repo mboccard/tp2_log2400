@@ -22,6 +22,10 @@ Machine::Machine(const FabriqueComposants& modele) : chauffage_(modele.creerChau
         reservesThe_.emplace(nom, Reserve(constantes::PREFIXE_NOM_RESERVE_THE + nom, constantes::UNITE_THE, constantes::THE_INITIAL_G, constantes::SEUIL_THE_G));
         abonner(reservesThe_.at(nom));
     }
+
+    routines_[constantes::NOM_ROUTINE_SOLO] = [this]() { return creerRoutineSolo(); };
+    routines_[constantes::NOM_ROUTINE_DUO] = [this]() { return creerRoutineDuo(); };
+    routines_[constantes::NOM_ROUTINE_MATIN] = [this]() { return creerRoutineMatin(); };
 }
 
 void Machine::abonner(Reserve& reserve)
@@ -60,8 +64,7 @@ void Machine::selectionner(const std::string& nomThe)
         std::cout << "Erreur : thé inconnu.\n";
         return;
     }
-    theCourant_ = the;
-    std::cout << "Thé sélectionné : " << the->getNom() << ".\n";
+    historique_.executer(std::make_unique<CommandeSelection>(configuration_, the));
 }
 
 bool Machine::reservesSuffisantes(const Besoins& besoins, const Reserve& reserveThe) const
@@ -84,20 +87,24 @@ bool Machine::reservesSuffisantes(const Besoins& besoins, const Reserve& reserve
 
 void Machine::infuser()
 {
-    if (theCourant_ == nullptr) {
+    const The* theCourant = configuration_.getTheCourant();
+    if (theCourant == nullptr) {
         std::cout << "Erreur : aucun thé sélectionné.\n";
         return;
     }
 
-    Reserve& reserveThe = reservesThe_.at(theCourant_->getNom());
+    const int portions = configuration_.getNPortions();
+    Reserve& reserveThe = reservesThe_.at(theCourant->getNom());
     ContexteInfusion contexte{*chauffage_, *distributeurEau_, *distributeurThe_, infuseur_, reserveEau_, reserveThe};
 
-    const Besoins besoins = theCourant_->calculerBesoins(contexte);
+    const Besoins besoins = theCourant->calculerBesoins(contexte).multiplier(portions);
     if (!reservesSuffisantes(besoins, reserveThe)) {
         return;
     }
 
-    theCourant_->preparer(contexte);
+    for (int i = 0; i < portions; ++i) {
+        theCourant->preparer(contexte);
+    }
 }
 
 void Machine::afficherReserves() const
@@ -139,5 +146,90 @@ void Machine::activerNotificationsDistantes(bool estActif)
             entree.second.detacher(&notificationDistante_);
         }
         std::cout << "Notifications à distance désactivées.\n";
+    }
+}
+
+void Machine::changerPortions(int nombre)
+{
+    historique_.executer(std::make_unique<CommandePortions>(configuration_, nombre));
+}
+
+void Machine::afficherConfiguration() const
+{
+    const The* theCourant = configuration_.getTheCourant();
+    std::cout << "Thé sélectionné : " << (theCourant ? theCourant->getNom() : constantes::AUCUN_THE) << ".\n";
+    std::cout << "Nombre de portions : " << configuration_.getNPortions() << ".\n";
+}
+
+std::unique_ptr<Routine> Machine::creerRoutineSolo()
+{
+    auto routine = std::make_unique<Routine>(constantes::NOM_ROUTINE_SOLO);
+    routine->ajouterCommande(std::make_unique<CommandeSelection>(configuration_, trouverThe(constantes::NOM_VERT)));
+    routine->ajouterCommande(std::make_unique<CommandePortions>(configuration_, constantes::PORTIONS_SOLO));
+    return routine;
+}
+
+std::unique_ptr<Routine> Machine::creerRoutineDuo()
+{
+    auto routine = std::make_unique<Routine>(constantes::NOM_ROUTINE_DUO);
+    routine->ajouterCommande(std::make_unique<CommandeSelection>(configuration_, trouverThe(constantes::NOM_NOIR)));
+    routine->ajouterCommande(std::make_unique<CommandePortions>(configuration_, constantes::PORTIONS_DUO));
+    return routine;
+}
+
+std::unique_ptr<Routine> Machine::creerRoutineMatin()
+{
+    auto routine = std::make_unique<Routine>(constantes::NOM_ROUTINE_MATIN);
+    routine->ajouterCommande(creerRoutineDuo());
+    routine->ajouterCommande(std::make_unique<CommandeSelection>(configuration_, trouverThe(constantes::NOM_OOLONG)));
+    return routine;
+}
+
+void Machine::executerRoutine(const std::string& nom)
+{
+    const auto it = routines_.find(nom);
+    if (it == routines_.end()) {
+        std::cout << "Erreur : routine inconnue.\n";
+        return;
+    }
+
+    std::unique_ptr<Routine> routine = it->second();
+    const std::string nomRoutine = routine->getNom();
+    if (historique_.executer(std::move(routine))) {
+        std::cout << "Routine appliquée : " << nomRoutine << ".\n";
+    }
+}
+
+void Machine::apercuRoutine(const std::string& nom)
+{
+    const auto it = routines_.find(nom);
+    if (it == routines_.end()) {
+        std::cout << "Erreur : routine inconnue.\n";
+        return;
+    }
+
+    std::unique_ptr<Routine> routine = it->second();
+    IterateurCommandes iterateur = routine->creerIterateur();
+    int numero = 1;
+    for (iterateur.premier(); !iterateur.estTermine(); iterateur.suivant()) {
+        std::cout << numero++ << ". " << iterateur.getCourant().decrire() << "\n";
+    }
+}
+
+void Machine::undo()
+{
+    if (historique_.undo()) {
+        std::cout << "Opération annulée.\n";
+    } else {
+        std::cout << "Erreur : aucune opération à annuler.\n";
+    }
+}
+
+void Machine::redo()
+{
+    if (historique_.redo()) {
+        std::cout << "Opération rétablie.\n";
+    } else {
+        std::cout << "Erreur : aucune opération à rétablir.\n";
     }
 }

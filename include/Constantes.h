@@ -48,5 +48,12 @@ const int OOLONG_DUREE_INFUSION_S = 90;
 const double OOLONG_VOLUME_RINCAGE_ML = 50.0;
 
 const double TEMPERATURE_INITIALE_CHAUFFAGE = 20.0;
+const int PORTIONS_INITIALES = 1;
+const std::string AUCUN_THE = "aucun";
 
+const std::string NOM_ROUTINE_SOLO = "solo";
+const std::string NOM_ROUTINE_DUO = "duo";
+const std::string NOM_ROUTINE_MATIN = "matin";
+const int PORTIONS_SOLO = 1;
+const int PORTIONS_DUO = 2;
 }

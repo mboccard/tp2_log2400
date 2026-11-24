@@ -74,6 +74,24 @@ int main(int argc, char* argv[])
             // TODO : déléguer l’abonnement ou le désabonnement (instruction.notificationsActives).
             machine.activerNotificationsDistantes(instruction.notificationsActives);
             break;
+        case console::TypeInstruction::Portions:
+            machine.changerPortions(instruction.portions);
+            break;
+        case console::TypeInstruction::Configuration:
+            machine.afficherConfiguration();
+            break;
+        case console::TypeInstruction::Routine:
+            machine.executerRoutine(instruction.routine);
+            break;
+        case console::TypeInstruction::Apercu:
+            machine.apercuRoutine(instruction.routine);
+            break;
+        case console::TypeInstruction::Undo:
+            machine.undo();
+            break;
+        case console::TypeInstruction::Redo:
+            machine.redo();
+            break;
         }
         std::cout << std::endl;
     }

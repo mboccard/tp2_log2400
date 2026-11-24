@@ -14,3 +14,8 @@ double Besoins::getThe() const
 {
     return the_;
 }
+
+Besoins Besoins::multiplier(int nPortions) const 
+{
+    return Besoins(eau_ * nPortions, the_ * nPortions);
+}

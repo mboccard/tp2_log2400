@@ -4,7 +4,6 @@
 #include <memory>
 #include <string>
 #include <vector>
-
 #include "AlerteEcran.h"
 #include "Besoins.h"
 #include "Chauffage.h"
@@ -15,18 +14,28 @@
 #include "NotificationDistante.h"
 #include "Reserve.h"
 #include "The.h"
+#include "Routine.h"
+#include "Configuration.h"
+#include "Historique.h"
+#include <functional>
+#include "CommandeSelection.h"
+#include "CommandePortions.h"
 
 class Machine {
 public:
     explicit Machine(const FabriqueComposants& modele);
-
     void selectionner(const std::string& nomThe);
     void infuser();
     void afficherReserves() const;
     void remplirEau(double mL);
     void remplirThe(const std::string& nomThe, double grammes);
     void activerNotificationsDistantes(bool estActif);
-
+    void changerPortions(int nombre);
+    void afficherConfiguration() const;
+    void executerRoutine(const std::string& nom);
+    void apercuRoutine(const std::string& nom);
+    void undo();
+    void redo();
 private:
     void abonner(Reserve& reserve);
     const The* trouverThe(const std::string& nom) const;
@@ -34,6 +43,9 @@ private:
     void afficherReserve(const Reserve& reserve) const;
     void afficherAjout(const Reserve& reserve, double quantite) const;
     void afficherErreurInsuffisante(const Reserve& reserve, double quantiteRequise) const;
+    std::unique_ptr<Routine> creerRoutineSolo();
+    std::unique_ptr<Routine> creerRoutineDuo();
+    std::unique_ptr<Routine> creerRoutineMatin();
 
     AlerteEcran alerteEcran_;
     NotificationDistante notificationDistante_;
@@ -44,5 +56,7 @@ private:
     Reserve reserveEau_;
     std::map<std::string, Reserve> reservesThe_;
     std::vector<std::unique_ptr<The>> thes_;
-    const The* theCourant_ = nullptr;
+    Configuration configuration_;
+    Historique historique_;
+    std::map<std::string, std::function<std::unique_ptr<Routine>()>> routines_;
 };

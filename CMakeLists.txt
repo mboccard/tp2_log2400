@@ -19,6 +19,13 @@ add_executable(PolyInfusion
     src/StrategieInfusion.cpp
     src/InfusionAvecRincage.cpp
     src/Machine.cpp
+    src/CommandeElementaire.cpp
+    src/CommandePortions.cpp
+    src/CommandeSelection.cpp
+    src/Configuration.cpp
+    src/Historique.cpp
+    src/IterateurCommandes.cpp
+    src/Routine.cpp
 )
 target_include_directories(PolyInfusion PRIVATE include)
 target_compile_features(PolyInfusion PRIVATE cxx_std_17)

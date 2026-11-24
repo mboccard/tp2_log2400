@@ -8,7 +8,7 @@ namespace console {
 // Elle ne constitue pas une implémentation du patron Commande.
 enum class TypeInstruction {
     Vide, Selection, Infuser, Reserves, RemplirEau, RemplirThe,
-    Notifications, Aide, Quitter, Invalide
+    Notifications, Aide, Quitter, Invalide, Portions, Configuration, Routine, Apercu, Undo, Redo
 };
 
 struct Instruction {
@@ -17,6 +17,8 @@ struct Instruction {
     double quantite = 0.0;
     bool notificationsActives = false;
     std::string erreur;
+    int portions = 0;
+    std::string routine;
 };
 
 Instruction analyser(const std::string& ligne);

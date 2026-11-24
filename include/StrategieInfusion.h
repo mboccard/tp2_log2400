@@ -6,7 +6,6 @@
 class StrategieInfusion {
 public:
     virtual ~StrategieInfusion() = default;
-
     Besoins calculerBesoins(const The& the, ContexteInfusion& contexte) const;
     void executer(const The& the, ContexteInfusion& contexte) const;
 

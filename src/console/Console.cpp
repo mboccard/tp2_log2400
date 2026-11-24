@@ -33,6 +33,17 @@ bool lireQuantite(const std::string& texte, double& quantite)
     return entree.eof() && std::isfinite(quantite) && quantite > 0.0;
 }
 
+bool lireEntier(const std::string& texte, int& valeur)
+{
+    std::istringstream entree(texte);
+    entree.imbue(std::locale::classic());
+    if (!(entree >> valeur)) {
+        return false;
+    }
+    entree >> std::ws;
+    return entree.eof();
+}
+
 } // namespace
 
 namespace console {
@@ -70,13 +81,30 @@ Instruction analyser(const std::string& ligne)
         }
         resultat.type = TypeInstruction::Notifications;
         resultat.notificationsActives = mots[1] == "activer";
-    } else if (nom == "infuser" || nom == "reserves" || nom == "h" || nom == "q") {
+    } else if (nom == "portions") {
+        if (mots.size() != 2) {
+            return invalide("Utilisation : portions <nombre>.");
+        }
+        if (!lireEntier(mots[1], resultat.portions)) {
+            return invalide("le nombre de portions doit être un entier strictement positif.");
+        }
+        resultat.type = TypeInstruction::Portions;
+    } else if (nom == "routine" || nom == "apercu") {
+        if (mots.size() != 2) {
+            return invalide("Utilisation : " + nom + " <nom>.");
+        }
+        resultat.type = nom == "routine" ? TypeInstruction::Routine : TypeInstruction::Apercu;
+        resultat.routine = mots[1];
+    } else if (nom == "infuser" || nom == "reserves" || nom == "h" || nom == "q" || nom == "configuration" || nom == "undo" || nom == "redo") {
         if (mots.size() != 1) {
             return invalide("Cette instruction ne prend aucun argument.");
         }
         if (nom == "infuser") resultat.type = TypeInstruction::Infuser;
         else if (nom == "reserves") resultat.type = TypeInstruction::Reserves;
         else if (nom == "h") resultat.type = TypeInstruction::Aide;
+        else if (nom == "configuration") resultat.type = TypeInstruction::Configuration;
+        else if (nom == "undo") resultat.type = TypeInstruction::Undo;
+        else if (nom == "redo") resultat.type = TypeInstruction::Redo;
         else resultat.type = TypeInstruction::Quitter;
     } else {
         return invalide("Instruction inconnue. Entrez h pour afficher l’aide.");
@@ -93,6 +121,12 @@ void afficherAide()
         << "remplir eau <quantite> : ajouter de l’eau, en millilitres.\n"
         << "remplir <vert|noir|oolong> <quantite> : ajouter du thé, en grammes.\n"
         << "notifications <activer|désactiver> : gérer les notifications à distance.\n"
+        << "portions <nombre> : régler le nombre de portions à préparer.\n"
+        << "configuration : afficher le thé sélectionné et le nombre de portions.\n"
+        << "routine <nom> : appliquer une routine prédéfinie.\n"
+        << "apercu <nom> : afficher les changements d’une routine.\n"
+        << "undo : annuler la dernière opération.\n"
+        << "redo : rétablir la dernière opération annulée.\n"
         << "h : afficher cette aide.\n"
         << "q : quitter l’application.\n";
 }
